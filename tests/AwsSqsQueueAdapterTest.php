@@ -81,7 +81,7 @@ class AwsSqsQueueAdapterTest extends PHPUnit_Framework_TestCase
             ->with(array(
                 'QueueUrl' => 'MyQueueUrl',
                 'MessageBody' => '"JobA"',
-                'VisibilityTimeout' => 3600
+                'DelaySeconds' => 3600
             ));
 
         $this->queue->schedule(new Job('JobA'), new DateTime('+1hour'));
