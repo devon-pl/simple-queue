@@ -83,7 +83,7 @@ class AwsSqsQueueAdapter implements QueueAdapterInterface
         $this->sqsClient->sendMessage(array(
             'QueueUrl' => $this->sqsUrl,
             'MessageBody' => $job->serialize(),
-            'VisibilityTimeout' => $delay
+            'DelaySeconds' => $delay
         ));
 
         return $this;
