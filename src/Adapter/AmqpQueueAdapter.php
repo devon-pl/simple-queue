@@ -105,7 +105,7 @@ class AmqpQueueAdapter implements QueueAdapterInterface
 
         $job = new Job();
         $job->setId($message->get('delivery_tag'));
-        $job->unserialize($message->getBody());
+        $job->unserialize($message->body);
 
         return $job;
     }
